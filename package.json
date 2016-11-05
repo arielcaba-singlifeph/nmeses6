@@ -1,0 +1,24 @@
+{
+  "name": "nmeses6",
+  "version": "0.0.1",
+  "private": false,
+  "description": "A Restful API Starter Template using Node, MongoDB, Express, Swagger in ES6",
+  "keywords": ["Node", "MongoDB", "Express", "Swagger", "ES6"],
+  "author": "Ariel Caba",
+  "license": "MIT",
+  "main": "app.js",
+  "dependencies": {
+    "cors": "^2.8.1",
+    "express": "^4.12.3",
+    "mongoose": "^4.6.6",
+    "swagger-express-mw": "^0.1.0"
+  },
+  "devDependencies": {
+    "should": "^7.1.0",
+    "supertest": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "swagger project test"
+  }
+}
