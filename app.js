@@ -36,13 +36,13 @@ app.use((err, req, res, next) => {
 });
 
 // required config
-var config = {
+const config = {
   appRoot: __dirname
 };
 
 SwaggerExpress.create(config, (err, swaggerExpress) => {
 
-  let port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3000;
   if (err) throw err;
 
   // install middleware
@@ -51,7 +51,7 @@ SwaggerExpress.create(config, (err, swaggerExpress) => {
   app.listen(port);
 
   if (swaggerExpress.runner.swagger.paths['/hello']) {
-    console.log(`try this: curl http://localhost:${port} /hello?name=Scott`);
+    console.log(`try this: curl http://localhost:${port} /hello?name=buddy!`);
   }
 
 });
