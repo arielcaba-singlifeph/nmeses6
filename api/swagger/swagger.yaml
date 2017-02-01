@@ -90,11 +90,12 @@ paths:
 # complex objects have schema definitions
 definitions:
   HelloResponse:
-    required:
-      - message
+    type: object
     properties:
       message:
         type: string
+      sucess:
+        type: boolean
   User:
     required:
       - name
