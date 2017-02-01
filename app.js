@@ -48,10 +48,16 @@ SwaggerExpress.create(config, (err, swaggerExpress) => {
   // install middleware
   swaggerExpress.register(app);
 
+  // install response validation listener (this will only be called if there actually are any errors or warnings)
+  swaggerExpress.runner.on('responseValidationError', function (validationResponse, request, response) {
+    // log your validationResponse here...
+    console.error(validationResponse.errors);
+  });
+
   app.listen(port);
 
   if (swaggerExpress.runner.swagger.paths['/hello']) {
-    console.log(`try this: curl http://localhost:${port} /hello?name=buddy!`);
+    console.log(`try this: curl http://localhost:${port}/hello?name=John`);
   }
 
 });
